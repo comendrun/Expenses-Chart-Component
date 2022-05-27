@@ -12,24 +12,29 @@ function extractedData() {
 
 extractedData();
 
-const d = new Date("July 21, 1983 01:15:00");
-let today = d.getDay() - 1;
-
-// this is the data for the chart itself
-const labels = days;
+// let d;
+// let today = d.getDay() - 1;
 
 let bgColor = [];
 let bgColorHover = [];
 
-for (let i = 0; i < days.length; i++) {
-  if (i === today) {
-    bgColor[i] = "hsl(186, 34%, 60%)";
-    bgColorHover[i] = "hsl(187, 49%, 80%)";
-  } else {
-    bgColor[i] = "hsl(10, 79%, 65%)";
-    bgColorHover[i] = "hsl(10, 100%, 76%)";
+function getBarBgColors() {
+  let d = new Date();
+  let today = d.getDay() - 1;
+  for (let i = 0; i < days.length; i++) {
+    if (i === today) {
+      bgColor[i] = "hsl(186, 34%, 60%)";
+      bgColorHover[i] = "hsl(187, 49%, 80%)";
+    } else {
+      bgColor[i] = "hsl(10, 79%, 65%)";
+      bgColorHover[i] = "hsl(10, 100%, 76%)";
+    }
   }
 }
+getBarBgColors();
+
+// this is the data for the chart itself
+const labels = days;
 
 const data = {
   labels: labels,
