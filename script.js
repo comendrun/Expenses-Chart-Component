@@ -12,15 +12,13 @@ function extractedData() {
 
 extractedData();
 
-// let d;
-// let today = d.getDay() - 1;
 
 let bgColor = [];
 let bgColorHover = [];
 
 function getBarBgColors() {
   let d = new Date();
-  let today = d.getDay() ;
+  let today = d.getDay() - 1 ;
   for (let i = 0; i < days.length; i++) {
     if (i === today) {
       bgColor[i] = "hsl(186, 34%, 60%)";
