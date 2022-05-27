@@ -20,7 +20,7 @@ let bgColorHover = [];
 
 function getBarBgColors() {
   let d = new Date();
-  let today = d.getDay() - 1;
+  let today = d.getDay() ;
   for (let i = 0; i < days.length; i++) {
     if (i === today) {
       bgColor[i] = "hsl(186, 34%, 60%)";
